@@ -14,6 +14,7 @@ class LoadConfig:
         self.chat_model = config["llm_config"]["chat_model"]
         self.rag_model  = config["llm_config"]["rag_model"]
         self.summary_model = config["llm_config"]["summary_model"]
+        self.temperature = config["llm_config"]["temperature"]
 
         #chat_history_config
         self.max_history_pairs = config["chat_history_config"]["max_history_pairs"]
@@ -21,7 +22,7 @@ class LoadConfig:
         self.max_tokens = config["chat_history_config"]["max_tokens"]
 
         #agent_config
-        self.agent_config = config["agent_config"]["max_function_calls"]
+        self.max_function_calls = config["agent_config"]["max_function_calls"]
 
         #vectordb_config
         self.collection_name = config["vectordb_config"]["collection_name"]

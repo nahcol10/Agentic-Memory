@@ -90,8 +90,8 @@ class UserManager:
                 query = "SELECT interests FROM user_info LIMIT 1;"
                 result = self.sql_manager.execute_query(query, fetch_one=True)
                 existing_interests = []
-                if result and result[0] and result[0][0]:
-                    existing_interests = [i.strip() for i in result[0][0].split(",") if i.strip()]
+                if result and result[0]:
+                    existing_interests = [i.strip() for i in result[0].split(",") if i.strip()]
                 merged_interests = sorted(set(existing_interests + new_interests))
                 processed_info["interests"] = ", ".join(merged_interests)
 
