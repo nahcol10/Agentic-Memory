@@ -33,3 +33,6 @@ if __name__ == "__main__":
         end_time = time.time()
 
         print(f"\nAssistant ({round(end_time - start_time, 2)}s): {response}")
+
+chatbot = ChatBot()
+print("chatbot created")

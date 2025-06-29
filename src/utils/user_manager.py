@@ -1,6 +1,6 @@
 import math
 from typing import Optional,Dict,Any,Tuple
-from sql_manager import SQLManager
+from .sql_manager import SQLManager
 
 class UserManager:
     """Manages users related operations, including retrieving user information and user ID from the database"""

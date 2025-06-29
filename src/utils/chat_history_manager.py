@@ -1,8 +1,8 @@
 from importlib.resources import contents
 from typing import Optional, List
 from mistralai import Mistral
-from sql_manager import SQLManager
-from utils import Utils
+from .sql_manager import SQLManager
+from .utilities import Utilities
 import json
 
 class ChatHistoryManager:
@@ -11,7 +11,7 @@ class ChatHistoryManager:
     """
 
     def __init__(self,sql_manager: SQLManager,user_id: str,session_id: str, client: Mistral, summary_model: str,max_tokens: int) -> None:
-        self.utils = Utils()
+        self.utils = Utilities()
         self.client = client
         self.summary_model = summary_model
         self.max_tokens = max_tokens

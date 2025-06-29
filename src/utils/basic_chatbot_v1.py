@@ -1,12 +1,12 @@
 import os
 import uuid
 from dotenv import load_dotenv
-from load_config import LoadConfig
+from .load_config import LoadConfig
 from mistralai import Mistral
-from sql_manager import SQLManager
-from user_manager import UserManager
-from chat_history_manager import ChatHistoryManager
-from prepare_system_prompt import prepare_system_prompt
+from .sql_manager import SQLManager
+from .user_manager import UserManager
+from .chat_history_manager import ChatHistoryManager
+from .prepare_system_prompt import prepare_system_prompt
 
 load_dotenv()
 

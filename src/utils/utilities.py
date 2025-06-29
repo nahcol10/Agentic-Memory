@@ -4,7 +4,7 @@ import inspect
 from inspect import Parameter
 from typing import Callable,Dict,Any
 
-class Utils:
+class Utilities:
     @staticmethod
     def count_number_of_tokens(text:str) -> int:
         """
