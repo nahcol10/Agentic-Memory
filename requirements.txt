@@ -1,0 +1,6 @@
+mistralai
+python-dotenv
+chromadb
+sqlite3
+pyprojroot
+pyyaml

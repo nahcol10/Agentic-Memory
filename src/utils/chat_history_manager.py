@@ -153,7 +153,7 @@ class ChatHistoryManager:
             return None
 
         #start building the prompt
-        summary_prompt = "Summarize the following converstation: \n\n"
+        summary_prompt = "Summarize the following conversation: \n\n"
 
         if previous_summary:
             summary_prompt += f"Previous summary :\n {previous_summary} \n\n"
@@ -161,7 +161,7 @@ class ChatHistoryManager:
         for q,a in chat_data:
             summary_prompt += f"User: {q}\n Assistant: {a} \n\n"
 
-        summary_prompt += "Provide consice summary while preserving the imporatant details."
+        summary_prompt += "Provide concise summary while preserving the important details."
 
         try:
             response = client.chat.complete(
@@ -170,7 +170,8 @@ class ChatHistoryManager:
                     {"role": "system","content": summary_prompt}
                 ]
             )
-            return response.choices[0].message.content
+            content = response.choices[0].message.content
+            return str(content) if content else None
         except Exception as e:
             print(f"Error getting summary : {str(e)}")
             return None
@@ -202,8 +203,11 @@ class ChatHistoryManager:
                 ],
                 max_tokens=300
             )
-            summarized_pairs = response.choices[0].message.content
-            summarized_pairs = json.loads(summarized_pairs)
+            summarized_pairs_content = response.choices[0].message.content
+            if not summarized_pairs_content:
+                raise ValueError("No content received from LLM.")
+            
+            summarized_pairs = json.loads(str(summarized_pairs_content))
 
             #If output is single dictionary warp it in a list
             if isinstance(summarized_pairs,dict):

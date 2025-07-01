@@ -4,8 +4,8 @@ directories:
 
 llm_config:
   chat_model: "mistral-large-latest"
-  rag_model: "magistral-medium-latest"
-  summary_model: "magistral-small-latest"
+  rag_model: "mistral-medium-latest"
+  summary_model: "mistral-small-latest"
   temperature: 0.0
 
 chat_history_config:

@@ -5,8 +5,8 @@ from typing import Tuple
 from dotenv import load_dotenv
 from mistralai import Mistral
 from chromadb.utils import embedding_functions
-from utils.load_config import LoadConfig
-from utils.prepare_system_prompt import prepare_system_prompt_for_rag_chatbot
+from .load_config import LoadConfig
+from .prepare_system_prompt import prepare_system_prompt_for_rag_chatbot
 
 load_dotenv()
 

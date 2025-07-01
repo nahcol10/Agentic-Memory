@@ -1,7 +1,7 @@
 import time
 from utils.basic_chatbot_v1 import ChatBot
 from utils.chatbot_agentic_v2 import ChatBot as ChatBot_v2
-from utils.chatbot_aegntic_v3 import ChatBot as Chatbot_v3
+from utils.chatbot_agentic_v3 import ChatBot as Chatbot_v3
 
 # If you'd like to chat with a different chatbot, modify the code manually.
 # chatbot_version = "basic"
